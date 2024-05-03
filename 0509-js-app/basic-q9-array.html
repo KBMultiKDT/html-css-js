@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = Array(); // let array = [];
+        for (let index = 0; index < 5; index++) {
+            array[index] = parseInt(Math.random() * 401 + 100); //100~500
+        }
+        document.write(array + "<br>");
+        let sum = 0, over300 = 0;
+        let sum_over300 = Array();
+        for (let index = 0; index < array.length; index++) {
+            document.write(index + ">> " + array[index] + "<br>");
+            sum =+ array[index];
+            if (array[index] >= 300) {
+               // document.write(index +  "<br>")
+                sum_over300.push(index);
+            }
+        }
+        document.write("300이상인 값이 저장된 인덱스 리스트 >> " + sum_over300)
+    </script>
+</body>
+</html>
