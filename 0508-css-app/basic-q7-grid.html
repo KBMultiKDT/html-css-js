@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        #d1,
+        #d3,
+        #d4 {
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+
+        #d1,
+        #d2 {
+            height: 100px;
+        }
+
+        #d3,
+        #d4 {
+            height: 140px;
+        }
+
+        .outer {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        #d1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer">
+        <div id="d1" style="background-color: pink;">오늘의 할인 메뉴는?</div>
+        <div id="d2" style="background-color: beige;">
+            <img src="img/food-1.png" alt="">
+        </div>
+        <div id="d3" style="background-color: orange;">
+            <img src="img/food-2.png" alt="">
+        </div>
+        <div id="d4" style="background-color: skyblue;">
+            <img src="img/food-3.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
