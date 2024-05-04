@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function next () {
+            const birthMonth = parseInt( document.getElementById('birthMonth').value);
+            const birthDay = parseInt( document.getElementById('birthDay').value );
+
+            if ( isNaN( birthMonth ) || isNaN( birthDay ) || birthMonth < 1 || birthMonth > 12 || birthDay < 1 || birthDay > 31 ) {
+                alert( "올바른 월과 일을 입력하세요." );
+                return;
+            }
+
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const nextBirthday = new Date( currentYear, birthMonth - 1, birthDay );
+
+            if ( nextBirthday < today ) {
+                nextBirthday.setFullYear( currentYear + 1 );
+            }
+
+            const oneDay = 1000 * 60 * 60 * 24;
+            const daysUntilNextBirthday = Math.ceil( ( nextBirthday - today ) / oneDay );
+
+            document.getElementById( "result" ).innerText = `다음 생일까지 ${ daysUntilNextBirthday }일 남았습니다.`;
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <h2>생일을 입력하세요</h2>
+    <label for="birthMonth">월: </label>
+    <input type="number" id="birthMonth" min="1" max="12">
+    <label for="birthDay">일: </label>
+    <input type="number" id="birthDay" min="1" max="31">
+    <button onclick="next()">계산하기</button>
+    <p id="result"></p>
+</body>
+
+</html>

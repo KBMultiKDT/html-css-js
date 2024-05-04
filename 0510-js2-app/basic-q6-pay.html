@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제금액 계산</title>
+    <style>
+        button {
+            background-color: lime;
+            color: red;
+            font-weight: bold;
+        }
+
+        input {
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+    <script>
+        function calculateFinalAmount () {
+            const paymentAmount = parseFloat( document.getElementById( "paymentAmount" ).value );
+            const paymentMethod = document.getElementById( "paymentMethod" ).value;
+            const paymentShop = document.getElementById( "paymentShop" ).value;
+            let finalAmount = paymentAmount;
+
+            switch ( paymentMethod ) {
+                case '신용카드':
+                    finalAmount += 1000;
+                    break;
+                case '휴대폰결제':
+                    finalAmount += 500;
+                    break;
+                default:
+                    break;
+            }
+
+            document.getElementById( "finalAmountDisplay" ).innerText = `${ paymentShop }에서 최종 결제금액: ${ finalAmount }원`;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="out">
+        <label for="paymentShop">구매상점 입력:</label>
+        <input type="text" id="paymentShop"><br><br>
+        <label for="paymentAmount">결제금액 입력:</label>
+        <input type="number" id="paymentAmount"><br><br>
+        <hr color="red">
+        <label for="paymentMethod">결제 수단 선택:</label>
+        <select id="paymentMethod">
+            <option value="계좌이체">계좌이체</option>
+            <option value="신용카드">신용카드</option>
+            <option value="휴대폰결제">휴대폰 결제</option>
+        </select><br><br>
+        <hr color="red">
+        <button onclick="calculateFinalAmount()">결제금액 계산</button><br><br>
+        <p id="finalAmountDisplay"></p>
+    </div>
+</body>
+
+</html>
