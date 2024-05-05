@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let array = Array();
+        const price = 5000;
+        for ( let index = 0; index < 14; index++ ) {
+            array.push( 0 );
+        }
+        //document.write(array);
+        let print_seat = "";
+        let print_seat_count = 0;
+        while ( true ) {
+            let seat_no = prompt( "좌석번호 선택(1~14), 종료 0" );
+            if ( seat_no == 0 ) {
+                alert( "예약 시스템을 종료합니다." );
+                for ( let index = 0; index < array.length; index++ ) {
+                    if ( array[ index ] == 1 ) {
+                        print_seat += (index + 1) + " ";
+                        print_seat_count++;
+                    }
+                }
+                document.write( "예약된 좌석번호는 " + print_seat + "<br>");
+                document.write( "예매 금액은 " +  print_seat_count * price + "원");
+
+                break;
+            } else {
+                if(array[seat_no - 1] != 1){
+                    array[ seat_no - 1 ] = 1;
+                }else{
+                    alert("이미 예약된 자리입니다.");
+                }
+            }
+        }//while
+
+    </script>
+</body>
+
+</html>

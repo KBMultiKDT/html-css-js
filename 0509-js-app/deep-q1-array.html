@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let array = [
+            [], [], [], []
+        ];
+
+        const price = 5000;
+        for ( let index = 0; index < 4; index++ ) {
+            for ( let index2 = 0; index2 < 14; index2++ ) {
+                array[ index ][ index2 ] = 0;
+            }
+            // array.push( 0 );
+        }
+        console.log( array + "<br>" );
+
+        for ( let index = 0; index < 4; index++ ) {
+            for ( let index2 = 0; index2 < 14; index2++ ) {
+                document.write( array[ index ][ index2 ] );
+            }
+            document.write( "<br>" );
+        }
+        let print_seat = "";
+        let print_seat_count = 0;
+
+        while ( true ) {
+
+            let exit_confirm = confirm( "예매를 진행하시겠습니까?" );
+            console.log( exit_confirm );
+            if ( exit_confirm == false ) {
+                alert( "예약 시스템을 종료합니다." );
+                //document.write( array + "<br>" );
+
+                for ( let i = 0; i < 4; i++ ) {
+                    for ( let j = 0; j < 10; j++ ) {
+                        console.log( i + " " + j );
+                        if ( array[ i ][ j ] == '1' ) {
+                            let line_no3 = '';
+                            console.log( "--------" );
+
+                            if ( i == '0' ) {
+                                line_no3 = 'A';
+                            } else if ( i == '1' ) {
+                                line_no3 = 'B';
+                            } else if ( i == '2' ) {
+                                line_no3 = 'C';
+                            } else if ( i == '3' ) {
+                                line_no3 = 'D';
+                            }
+                            //alert( line_no3 + " " + j )
+                            print_seat += ( line_no3 + ( j + 1 ) + " " );
+                            print_seat_count++;
+                        } //if
+                    } //for
+                    console.log( "\n" );
+                } //for
+
+                document.write( "예약된 좌석번호는 " + print_seat + "<br>" );
+                document.write( "예매 금액은 " + print_seat_count * price + "원" );
+                document.write( "<hr color=red>" );
+                for ( let index = 0; index < 4; index++ ) {
+                    for ( let index2 = 0; index2 < 14; index2++ ) {
+                        document.write( array[ index ][ index2 ] );
+                    }
+                    document.write( "<br>" );
+                }
+                break;
+            } //종료 if
+
+            let line_no = prompt( "좌석번호 행 선택(A~D)" );
+            let line_no2 = 0;
+            if ( line_no == 'A' ) {
+                line_no2 = 0;
+            } else if ( line_no == 'B' ) {
+                line_no2 = 1;
+            } else if ( line_no == 'C' ) {
+                line_no2 = 2;
+            } else if ( line_no == 'D' ) {
+                line_no2 = 3;
+            } else {
+                alert( "잘못된 좌석 행 번호 입니다. 다시 입력해주세요." );
+            }
+            //alert(line_no2)
+            let seat_no = parseInt( prompt( "좌석번호 열 선택(1~9)" ) );
+            console.log( line_no + " " + line_no2 + ( seat_no - 1 ) )
+            console.log( array[ line_no2 ][ seat_no - 1 ] );
+            console.log( array[ 0 ][ 0 ] )
+            console.log( array[ line_no2 ][ seat_no - 1 ] != 1 );
+            if ( array[ line_no2 ][ seat_no - 1 ] != 1 ) {
+                array[ line_no2 ][ seat_no - 1 ] = 1;
+                alert( "예매가 완료되었습니다." );
+            } else {
+                alert( "이미 예약된 자리입니다." );
+            }
+        }//while
+
+    </script>
+</body>
+
+</html>

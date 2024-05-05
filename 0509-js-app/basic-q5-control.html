@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        for (let index = 0; index < 10; index++) {
+             document.write("*")
+         }
+         */
+
+        /*
+        let char = prompt("원하는 기호를 입력");
+        let count = prompt("원하는 횟수를 입력");
+        for (let index = 0; index < count; index++) {
+            document.write(char)
+        }
+        */
+
+        /*
+        let total_count = 0;
+        while ( true ) {
+            let q = prompt( "증가 1), 감소 2) 종료 3)을 선택해주세요." );
+            if ( q == '1' ) {
+                total_count++;
+
+            } else if ( q == '2' ) {
+                total_count--;
+            } else if ( q == '3' ) {
+                alert( "프로그램 종료>> 현재까지의 카운트는 " + total_count );
+                break;
+            } else {
+                alert( "잘못된 입력값입니다. 다시 입력해주세요." );
+            }
+        }
+        */
+
+        let date = new Date();
+        let year = date.getFullYear();
+        let day = date.getDay();
+        let month = date.getMonth() + 1;
+
+        if (year >= 2000) {
+            document.write(year + "년 밀레니엄 세대시군요.<br>");
+        } else {
+            document.write("밀레니엄 세대가 아니시군요.<br>");
+        }
+        if (day == 1 || day ==  6) {
+            document.write(day + ">> 쉬~~~~~~~~자!<br>");
+        } else {
+            document.write(day + ">> 열~~심히 공부하자.<br>");
+        }
+        let result = "31일까지";
+        switch (month) {
+            case 4: case 6: case 9: case 11:
+                result = "30일까지";
+                break;
+            case 2:
+                result = "28일까지";
+                break;
+        }
+        document.write(month + ">> " + result);
+
+
+    </script>
+</body>
+
+</html>
