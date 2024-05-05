@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>먹고 싶은 음식과 먹기 싫은 음식</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+
+        function checkWeather () {
+            const temperature = parseFloat( document.getElementById( "temperature" ).value );
+            const dayOfWeek = document.getElementById( "dayOfWeek" ).value;
+            const weatherResult = document.getElementById( "weatherResult" );
+
+            let season = "";
+
+            if ( !isNaN( temperature ) && dayOfWeek.trim() !== "" ) {
+                if ( temperature >= 30 ) {
+                    season = "여름";
+                } else if ( temperature < 5 ) {
+                    season = "겨울";
+                } else {
+                    season = "봄/가을";
+                }
+
+                weatherResult.innerHTML = `오늘은 <strong>${ dayOfWeek }</strong>요일인데, ${ season }이군요.`;
+            } else {
+                weatherResult.innerHTML = "온도와 요일을 입력해주세요.";
+            }
+        }
+        function suggestFood () {
+            const favoriteFood = document.getElementById( "favoriteFood" ).value;
+            const hatedFood = document.getElementById( "hatedFood" ).value;
+
+            const resultElement = document.getElementById( "result" );
+
+            if ( favoriteFood && hatedFood ) {
+                resultElement.innerHTML = `오늘은 <strong>${ favoriteFood }</strong>을(를) 먹고,<br>내일은 <strong>${ hatedFood }</strong>을(를) 먹어보세요.`;
+            } else {
+                resultElement.innerHTML = "먹고 싶은 음식과 먹기 싫은 음식을 모두 입력하세요.";
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        button {
+            background-color: lime;
+            color: red;
+            font-weight: bold;
+        }
+
+        input {
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="favoriteFood">먹고 싶은 음식: </label>
+    <input type="text" id="favoriteFood"><br><br>
+
+    <label for="hatedFood">먹기 싫은 음식: </label>
+    <input type="text" id="hatedFood"><br><br>
+
+    <button onclick="suggestFood()">뭐 먹지????</button>
+
+    <div id="result"></div>
+    <hr>
+    <div class="container mt-5">
+        <div class="form-group">
+            <label for="temperature">오늘의 온도 (℃): </label>
+            <input type="number" id="temperature" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="dayOfWeek">오늘은 무슨 요일인가요? </label>
+            <input type="text" id="dayOfWeek" class="form-control">
+        </div>
+        <button onclick="checkWeather()" class="btn btn-primary">날씨는 어떤가요??</button>
+        <p id="weatherResult" class="mt-3"></p>
+    </div>
+
+</body>
+
+</html>
