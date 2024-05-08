@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            visibility: none;
+        }
+
+        .money {
+            display: none;
+        }
+
+        .header {
+            padding: 15px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .menu {
+            width: 260px;
+            float: left;
+        }
+
+        .section {
+            width: 700px;
+            float: right;
+        }
+
+        @media screen and (max-width: 767px) {
+            body {
+                width: auto;
+            }
+
+            .menu {
+                display: none;
+                width: auto;
+                float: none;
+            }
+
+
+
+            .section {
+                width: auto;
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../0508-css-app-original/img/wide-top.png" alt="">
+    </div>
+    <div class="menu">
+        <img src="../0508-css-app-original/img/wide-left.png" alt="">
+    </div>
+    <div class="money">
+        <img src="../0508-css-app-original/img/money.png" alt="">
+    </div>
+    <div class="section">
+        <img src="../0508-css-app-original/img/mobile-smile.png" alt="" width="400" height="300">
+    </div>
+    <div class="footer">
+        <img src="../0508-css-app-original/img/mobile-under.png">
+    </div>
+</body>
+
+</html>

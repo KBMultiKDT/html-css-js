@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    let number = Math.random();
+    let target = parseInt(number * 100);
+    alert(number + " " + target);
+    let total_count = 0;
+    while (true) {
+        let data = prompt("정답 숫자를 입력하세요.");
+        total_count++;
+        if (data == target) {
+            alert("정답입니다. 정답은 >> " + target);
+            alert("시도횟수는 >> " + total_count);
+            break;
+        }else{
+            alert("정답이 아닙니다.");
+            if (data > target) {
+                alert("너무 커요!");
+            } else {
+                alert("너무 작아요!");
+            }
+        }
+    }
+</script>
+</body>
+
+</html>
