@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tour_name = "홍콩";
+        let tour_price = 600000;
+        let tour_member = 5;
+        let date = new Date();
+        let tour_date = date.getFullYear() + "년 " + (date.getMonth() + 1) + "월 " + date.getDate() + "일";
+        let tour_tel = "010-1234-5678";
+        let tour_attention = "마카오를 방문하고자 하는 사람은 서류 필수 체크";
+        let tour_extra_price_first = 200000;
+        let tour_extra_price_real_1 = tour_extra_price_first - 50000;
+        let tour_total_price = 600000 * 5;
+        let tour_extra_price_real_member = tour_extra_price_real_1 * 5;
+        let tour_total_price_member = tour_total_price + tour_extra_price_real_member;
+        let data =  "여행지 명 " + tour_name + " \n" +
+                    "여행 경비 " + tour_price + " \n" +
+                    "여행 인원 " + tour_member + " \n" +
+                    "여행 일정 " + tour_date + " \n" +
+                    "여행사 연락처 " + tour_tel + " \n" +
+                    "여행 중 주의사항 " + tour_attention + " \n" +
+                    "예상 추가 경비 " + tour_extra_price_first + " \n" +
+                    "실제 추가 경비(1인) " + tour_extra_price_real_1 + " \n" +
+                    "총 회원 원래 경비 " + tour_total_price + + " \n" +
+                    "추가 경비(전체인원) " + tour_extra_price_real_member + " \n" +
+                    "총 회원 최종 경비 " + tour_total_price_member + "원";
+        alert(data)
+    </script>
+</body>
+</html>
