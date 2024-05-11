@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let lotto = new Map();
+        while ( true ) {
+            let num = parseInt( Math.random() * 45 + 1 );
+            console.log( num );
+            if(!lotto.has(num)){
+                lotto.set( num,  1 );
+            }
+            if ( lotto.size == 5 ) {
+                break;
+            }
+        }
+        const array = Array.from( lotto.keys() );
+        document.write( array );
+    </script>
+</body>
+
+</html>
