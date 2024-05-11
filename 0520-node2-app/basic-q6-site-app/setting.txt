@@ -1,0 +1,4 @@
+alicia@Aliciaui-MacBookAir basic-q6-site-app % npm i express
+alicia@Aliciaui-MacBookAir basic-q6-site-app % npm i nodemon -g --save-dev
+alicia@Aliciaui-MacBookAir basic-q6-site-app % nodemon server-1.js
+
